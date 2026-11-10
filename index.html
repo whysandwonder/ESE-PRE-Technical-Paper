@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="UPSC ESE Prelims Paper II (Civil, Mechanical, Electrical, E&T) previous year questions 2017–2026 with answers, analysis, random tests and bookmarks. Works offline.">
+<meta name="theme-color" content="#0f766e" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14171c" media="(prefers-color-scheme: dark)">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="ESE Paper II">
+<link rel="icon" href="icon-192.png" type="image/png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="manifest" href="manifest.webmanifest">
+<title>UPSC ESE PYQ Portal Paper II</title>
+<link rel="stylesheet" href="style.css?v=20261111c">
+<script>
+  // apply the saved theme before first paint (app.js keeps it in sync afterwards)
+  try { var t = localStorage.getItem("ese2pyq-theme"); if (t) document.documentElement.setAttribute("data-theme", t); } catch (e) { /* ignore */ }
+</script>
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="#/">UPSC <span class="full">ESE Prelims </span>Paper II <span class="yrs">2017–2026</span></a>
+  <nav class="top-nav" aria-label="Sections">
+    <a href="#/" data-tab="practice"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>Practice</a>
+    <a href="#/test" data-tab="test"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M16 3h5v5M4 20L21 3M21 16v5h-5M15 15l6 6M4 4l5 5"/></svg>Test</a>
+    <a href="#/analysis" data-tab="analysis"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>Analysis</a>
+    <a href="#/bookmarks" data-tab="bookmarks"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>Bookmarks</a>
+  </nav>
+  <div class="top-tools">
+    <button class="branch-btn" id="branch-btn" type="button" hidden title="Change branch"></button>
+    <button class="btn primary install-btn" id="install-btn" type="button" hidden title="Install this portal as an app">Install app</button>
+    <a class="icon-btn mobile-only" href="#/analysis" data-tab="analysis" title="PYQ analysis" aria-label="PYQ analysis"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 20V10M12 20V4M6 20v-6"/></svg></a>
+    <a class="icon-btn" href="#/data" data-tab="data" id="data-btn" title="My data: backup and restore" aria-label="My data: backup and restore"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg></a>
+    <button class="theme-btn icon-btn" id="theme-btn" type="button" aria-label="Toggle night mode" title="Night mode">🌙</button>
+  </div>
+</header>
+<main id="app"></main>
+<footer class="credit">ESE PYQ by Vikalp :)</footer>
+<nav class="bottom-nav" aria-label="Sections">
+  <a href="#/" data-tab="practice"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg><span>Practice</span></a>
+  <a href="#/test" data-tab="test"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M16 3h5v5M4 20L21 3M21 16v5h-5M15 15l6 6M4 4l5 5"/></svg><span>Test</span></a>
+  <a href="#/bookmarks" data-tab="bookmarks"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg><span>Saved</span></a>
+</nav>
+
+<script src="branches.js?v=20261111c"></script>
+<script>
+// Loader: the first visit (or "Change branch") shows the branch picker; after that the saved branch's data and app.js load directly.
+(function () {
+  var KEY = window.ESE_BRANCH_KEY, PICK = "ese2pyq-pick";
+  var app = document.getElementById("app");
+  // the browser may offer installation before app.js has loaded: keep the offer for app.js
+  window.addEventListener("beforeinstallprompt", function (e) { e.preventDefault(); window.__installEvt = e; });
+  // published build (has a manifest): keep an offline copy from the very first visit, before a branch is chosen
+  if (document.querySelector('link[rel="manifest"]') && "serviceWorker" in navigator && /^https?:$/.test(location.protocol)) {
+    navigator.serviceWorker.register("sw.js").catch(function () { /* the site still works online */ });
+  }
+  function get(store, k) { try { return store.getItem(k); } catch (e) { return null; } }
+  function set(store, k, v) { try { if (v == null) store.removeItem(k); else store.setItem(k, v); } catch (e) { /* ignore */ } }
+  function find(id) { return window.ESE_BRANCHES.filter(function (b) { return b.id === id; })[0]; }
+  var saved = find(get(localStorage, KEY));
+  var branch = saved || find(get(sessionStorage, KEY)); // sessionStorage: fallback when localStorage is blocked
+
+  function load(b) {
+    window.ESE_BRANCH = b;
+    document.getElementById("theme-btn").onclick = null; // app.js takes over the theme toggle
+    var bb = document.getElementById("branch-btn");
+    bb.innerHTML = b.short + ' <span aria-hidden="true">▾</span>';
+    bb.hidden = false;
+    bb.addEventListener("click", function () { set(sessionStorage, PICK, "1"); location.replace("#/"); location.reload(); });
+    var v = "?v=20261111c";
+    var files = ["data/" + b.id + ".js", "app.js"]; // one combined data file per branch
+    files.forEach(function (src) {
+      var s = document.createElement("script");
+      s.src = src + v;
+      s.async = false; // run in list order
+      document.body.appendChild(s);
+    });
+  }
+
+  function picker() {
+    document.querySelectorAll(".top-nav, .bottom-nav, #data-btn, .mobile-only").forEach(function (n) { n.hidden = true; });
+    var cur = branch ? branch.id : "";
+    var icons = {
+      ce: '<path d="M3 21h18M5 21V10l7-5 7 5v11M9 21v-6h6v6"/>',
+      me: '<circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M2 12h3M19 12h3M4.9 19.1L7 17M17 7l2.1-2.1"/>',
+      ee: '<path d="M13 2L4 14h7l-1 8 9-12h-7z"/>',
+      ece: '<path d="M5 12a7 7 0 0 1 14 0M8.5 12a3.5 3.5 0 0 1 7 0"/><circle cx="12" cy="12" r="1"/><path d="M12 13v8"/>'
+    };
+    app.innerHTML = '<h1>Choose your branch</h1>' +
+      '<p class="sub">UPSC ESE Prelims Paper II (Engineering discipline): 150 questions, 300 marks. Pick your branch once; the portal remembers it and opens straight to your PYQs next time. You can change it any time from the button at the top.</p>' +
+      '<div class="mode-grid branch-grid">' + window.ESE_BRANCHES.map(function (b) {
+        var n = b.files.length * 25;
+        return '<button class="mode' + (b.id === cur ? ' current' : '') + '" type="button" data-branch="' + b.id + '">' +
+          '<svg class="ico" viewBox="0 0 24 24" aria-hidden="true">' + icons[b.id] + '</svg>' +
+          '<strong>' + b.name + '</strong><span>' + (n ? n + ' questions added' : 'Coming soon') + (b.id === cur ? ' · current' : '') + '</span></button>';
+      }).join("") + '</div>';
+    app.querySelectorAll("[data-branch]").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        var b = find(btn.dataset.branch);
+        set(localStorage, KEY, b.id);
+        set(sessionStorage, KEY, b.id);
+        set(sessionStorage, PICK, null);
+        document.querySelectorAll(".top-nav, .bottom-nav, #data-btn, .mobile-only").forEach(function (n) { n.hidden = false; });
+        location.replace("#/");
+        branch = b;
+        load(b);
+      });
+    });
+    // theme toggle works on the picker too (app.js is not loaded yet)
+    var tb = document.getElementById("theme-btn");
+    function dark() {
+      var t = document.documentElement.getAttribute("data-theme");
+      return t ? t === "dark" : !!(window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches);
+    }
+    tb.textContent = dark() ? "☀️" : "🌙";
+    tb.onclick = function () {
+      var next = dark() ? "light" : "dark";
+      document.documentElement.setAttribute("data-theme", next);
+      set(localStorage, "ese2pyq-theme", next);
+      tb.textContent = dark() ? "☀️" : "🌙";
+    };
+  }
+
+  if (branch && !get(sessionStorage, PICK)) load(branch); else picker();
+})();
+</script>
+</body>
+</html>
