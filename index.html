@@ -14,7 +14,7 @@
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="manifest" href="manifest.webmanifest">
 <title>UPSC ESE PYQ Portal Paper II</title>
-<link rel="stylesheet" href="style.css?v=20261111c">
+<link rel="stylesheet" href="style.css?v=20261111e">
 <script>
   // apply the saved theme before first paint (app.js keeps it in sync afterwards)
   try { var t = localStorage.getItem("ese2pyq-theme"); if (t) document.documentElement.setAttribute("data-theme", t); } catch (e) { /* ignore */ }
@@ -22,7 +22,7 @@
 </head>
 <body>
 <header class="topbar">
-  <a class="brand" href="#/">UPSC <span class="full">ESE Prelims </span>Paper II <span class="yrs">2017–2026</span></a>
+  <a class="brand" href="#/"><span class="upsc">UPSC </span><span class="full">ESE Prelims </span>Paper II <span class="yrs">2017–2026</span></a>
   <nav class="top-nav" aria-label="Sections">
     <a href="#/" data-tab="practice"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>Practice</a>
     <a href="#/test" data-tab="test"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M16 3h5v5M4 20L21 3M21 16v5h-5M15 15l6 6M4 4l5 5"/></svg>Test</a>
@@ -31,7 +31,7 @@
   </nav>
   <div class="top-tools">
     <button class="branch-btn" id="branch-btn" type="button" hidden title="Change branch"></button>
-    <button class="btn primary install-btn" id="install-btn" type="button" hidden title="Install this portal as an app">Install app</button>
+    <button class="btn primary install-btn" id="install-btn" type="button" hidden title="Install this portal as an app" aria-label="Install app"><svg class="ico install-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg><span class="install-txt">Install app</span></button>
     <a class="icon-btn mobile-only" href="#/analysis" data-tab="analysis" title="PYQ analysis" aria-label="PYQ analysis"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 20V10M12 20V4M6 20v-6"/></svg></a>
     <a class="icon-btn" href="#/data" data-tab="data" id="data-btn" title="My data: backup and restore" aria-label="My data: backup and restore"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg></a>
     <button class="theme-btn icon-btn" id="theme-btn" type="button" aria-label="Toggle night mode" title="Night mode">🌙</button>
@@ -45,7 +45,7 @@
   <a href="#/bookmarks" data-tab="bookmarks"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg><span>Saved</span></a>
 </nav>
 
-<script src="branches.js?v=20261111c"></script>
+<script src="branches.js?v=20261111e"></script>
 <script>
 // Loader: the first visit (or "Change branch") shows the branch picker; after that the saved branch's data and app.js load directly.
 (function () {
@@ -70,7 +70,7 @@
     bb.innerHTML = b.short + ' <span aria-hidden="true">▾</span>';
     bb.hidden = false;
     bb.addEventListener("click", function () { set(sessionStorage, PICK, "1"); location.replace("#/"); location.reload(); });
-    var v = "?v=20261111c";
+    var v = "?v=20261111e";
     var files = ["data/" + b.id + ".js", "app.js"]; // one combined data file per branch
     files.forEach(function (src) {
       var s = document.createElement("script");

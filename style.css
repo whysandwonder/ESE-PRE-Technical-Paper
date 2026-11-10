@@ -420,7 +420,20 @@ a:focus-visible, button:focus-visible, summary:focus-visible, label.btn:focus-vi
 /* install */
 [hidden] { display: none !important; }
 .install-btn { padding: 6px 12px; font-size: .88rem; white-space: nowrap; }
-@media (max-width: 480px) { .install-btn { padding: 5px 9px; font-size: .8rem; } }
+.install-ico { display: none; }
+/* phones: the install button becomes an icon the size of the other top-bar icons, so the bar never overflows */
+@media (max-width: 480px) {
+  .install-btn { display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 34px; padding: 0; }
+  .install-btn[hidden] { display: none; }
+  .install-btn .install-txt { display: none; }
+  .install-btn .install-ico { display: block; width: 18px; height: 18px; }
+}
+@media (max-width: 400px) {
+  .topbar { gap: 6px; padding-left: 10px; padding-right: 10px; }
+  .top-tools { gap: 5px; }
+  .branch-btn { padding: 5px 9px; }
+  .brand .upsc { display: none; }
+}
 @media (display-mode: standalone) { .credit { padding-bottom: 18px; } }
 
 /* ---------- PYQ analysis ---------- */

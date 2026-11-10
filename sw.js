@@ -1,5 +1,5 @@
-/* UPSC ESE PYQ portal service worker: keeps a full offline copy; built 202611110213 */
-const CACHE = 'ese2-pyq-202611110213';
+/* UPSC ESE PYQ portal service worker: keeps a full offline copy; built 202611110244 */
+const CACHE = 'ese2-pyq-202611110244';
 const ASSETS = [
  "./",
  "./index.html",
@@ -8,13 +8,13 @@ const ASSETS = [
  "./icon-512.png",
  "./icon-maskable-512.png",
  "./apple-touch-icon.png",
- "./style.css?v=20261111c",
- "./branches.js?v=20261111c",
- "./data/ce.js?v=20261111c",
- "./data/me.js?v=20261111c",
- "./data/ee.js?v=20261111c",
- "./data/ece.js?v=20261111c",
- "./app.js?v=20261111c",
+ "./style.css?v=20261111e",
+ "./branches.js?v=20261111e",
+ "./data/ce.js?v=20261111e",
+ "./data/me.js?v=20261111e",
+ "./data/ee.js?v=20261111e",
+ "./data/ece.js?v=20261111e",
+ "./app.js?v=20261111e",
  "./img/ce/2017-10.png",
  "./img/ce/2017-18.png",
  "./img/ce/2017-20.png",
